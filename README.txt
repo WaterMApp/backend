@@ -105,6 +105,7 @@ fountains_measurements(
 fountains_comments(
     id varchar(10),
     text varchar(140),
+    name varchar(20),
     timestamp int
 )
 
