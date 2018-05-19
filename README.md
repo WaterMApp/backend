@@ -1,4 +1,4 @@
-# *************************************************************
+# ***************************************************************
 
 The backend/database architecture is mainly mantained by Be-P
 
@@ -85,9 +85,8 @@ req.body:
     { ph:double, turb:double, temp:double [, timestamp: int] }
 
 
-****************** END OF API IFACE *************************
 
-****************** DB SCHEMA ********************************
+# ****************** DB SCHEMA ********************************
 
 fountains( 
     id varchar(10),  // MEANT FOR UID STRING @TODO PRIMARYKEY
@@ -110,16 +109,12 @@ fountains_comments(
     timestamp int
 )
 
-****************** END OF DB SCHEMA ******************************
 
-****************** DB_MANAGMENT.JS DB IFACE **********************
+# ****************** DB_MANAGMENT.JS DB IFACE **********************
 
 nodejs module that exports following methods:
 @TODO DOC
 
-
-
-***************** END OF DB IFACE *******************************
 
 
 
