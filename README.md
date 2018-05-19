@@ -1,11 +1,10 @@
-# ***************************************************************
-
+# INTRO
 The backend/database architecture is mainly mantained by Be-P
 
 
-# ****************** API IFACE ********************************
+# API IFACE 
 
-1. GET FOUNTAIN LIST
+### 1. GET FOUNTAIN LIST
 
 req:
     GET /fountain_list 
@@ -19,7 +18,7 @@ res(json):
         {"id": "bf456jg9ak", "lat": 33.3, "lng": 33.4, "street": "via pluto"}
     ]
 
-2. CREATE FOUNTAIN 
+### 2. CREATE FOUNTAIN 
 
 ! REQUIRES JSON REQUEST BODY (IF FAILS CHECK FOR APPLICATION/JSON HEADER)
 
@@ -34,7 +33,7 @@ req.body:
 res:
     id of newly created fountain
 
-3. GET FOUNTAIN DATA
+### 3. GET FOUNTAIN DATA
 
 req: 
     GET /fountain_data/:id
@@ -48,7 +47,7 @@ res:
     e.g.
     { 'id': 'a029345dkg', 'ph': 3.3, 'turb': 4.4, 'temp':22.0, 'timestamp' : 1526729844 }
 
-4. ADD FOUNTAIN DATA
+### 4. ADD FOUNTAIN DATA
 
 req:
     POST /fountain_data/:id
@@ -61,7 +60,7 @@ req.body:
 res:
     blank 
 
-5. GET COMMENTS ABOUT FOUNTAIN
+### 5. GET COMMENTS ABOUT FOUNTAIN
 
 req:
     GET /fountain_comments/:id
@@ -69,7 +68,7 @@ req:
 res:
     {id string, text string, timestamp int, name string}
 
-6. ADD COMMENTS ABOUT FOUNTAIN
+### 6. ADD COMMENTS ABOUT FOUNTAIN
 
 req:
     POST /fountain_comments/:id
@@ -77,7 +76,7 @@ req:
 req.body:
     {text: string, name: string [,timestamp: int]}
 
-7. ADD MEASUREMENTS 
+### 7. ADD MEASUREMENTS 
 
 req:
     POST /@TODO
@@ -86,7 +85,7 @@ req.body:
 
 
 
-# ****************** DB SCHEMA ********************************
+# DB SCHEMA
 
 fountains( 
     id varchar(10),  // MEANT FOR UID STRING @TODO PRIMARYKEY
@@ -110,7 +109,7 @@ fountains_comments(
 )
 
 
-# ****************** DB_MANAGMENT.JS DB IFACE **********************
+# DB_MANAGMENT.JS DB IFACE
 
 nodejs module that exports following methods:
 @TODO DOC
