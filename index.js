@@ -42,7 +42,7 @@ app.get("/fountain_data/:id",function(req,res){
 
     db.get_last_measurement(
         req.params.id,
-        (m)=>res.send(JSON.stringify(m))
+        (m)=>{ console.log("fount data ret:",m);res.send(JSON.stringify(m)); }
     );
 
 });
@@ -51,7 +51,7 @@ app.get("/fountain_comments/:id",function(req,res){
     log("get fountain_comments");
     db.get_comments(
         req.params.id,
-        (l)=>{ log(l);res.send(JSON.stringify(l)) }
+        (l)=>{ log("comments result:",l);res.send(JSON.stringify(l)) }
     );
 
 });
